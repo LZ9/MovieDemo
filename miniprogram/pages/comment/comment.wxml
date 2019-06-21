@@ -20,7 +20,7 @@
     <view>
       <image class="comment-img" src="{{item}}" wx:for="{{images}}" wx:key="{{index}}"></image>
     </view>
-    <van-button size="large" type="danger" bindtap="onClickSubmit">提交评价</van-button>
+    <van-button size="large" type="primary" bindtap="onClickSubmit">提交评价</van-button>
   </view>
 
 </view>
