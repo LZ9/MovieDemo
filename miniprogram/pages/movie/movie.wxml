@@ -10,4 +10,5 @@
     </view>
     <view>年份：{{item.year}}年</view>
   </view>
+  <button class="movie-comment-style" catchtap="onClickComment" data-movieid="{{item.id}}">评价</button>
 </view>

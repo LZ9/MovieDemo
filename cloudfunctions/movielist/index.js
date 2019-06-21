@@ -26,3 +26,6 @@ exports.main = async(event, context) => {
 // 电影详情API：http://api.douban.com/v2/movie/subject/${event.movieid}?apikey=0df993c66c0c636e29ecbb5344252a4a
 
 // 具体也可以参考课程主页右下角的课程源码。
+
+// 配置请求
+// https://github.com/request/request-promise

@@ -26,3 +26,11 @@
 .movie-score-style {
   color: #faaf00;
 }
+
+.movie-comment-style {
+  height: 60rpx;
+  background: #09bb07;
+  color: #fff;
+  font-size: 26rpx;
+  margin-top: 120rpx;
+}

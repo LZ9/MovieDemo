@@ -1,34 +1,48 @@
-// pages/movie/movie.js
+// pages/comment/comment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    movieList: [],
+    movieDetail: {},
+    content: "" // 评价内容
   },
 
-  onClickComment: function(event) {
-    wx.navigateTo({
-      url: `../comment/comment?movieid=${event.target.dataset.movieid}`,
-    })
+  onContentChange: function() {
+
   },
 
-  getMovieList: function() {
+  onScoreChange: function() {
+
+  },
+
+  onUploadImg: function() {
+
+  },
+
+  onClickSubmit: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    console.log(options)
     wx.showLoading({
       title: '加载中',
     })
     wx.cloud.callFunction({
-        name: "movielist",
+        name: "movie-detail",
         data: {
-          start: this.data.movieList.length,
-          count: 10
+          movieid: options.movieid,
         }
       })
       .then(res => {
         console.log(res)
         this.setData({
-          movieList: this.data.movieList.concat(JSON.parse(res.result).subjects)
+          movieDetail: JSON.parse(res.result)
         })
         wx.hideLoading()
       })
@@ -39,13 +53,6 @@ Page({
           title: '数据加载失败',
         })
       });
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-    this.getMovieList()
   },
 
   /**
@@ -87,7 +94,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    this.getMovieList()
+
   },
 
   /**
